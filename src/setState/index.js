@@ -1,30 +1,29 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import ListItems from "./Components/listItems";
-import AddItems from "./Components/addItem";
+import React, { Component } from 'react';
+import ListItems from './Components/listItems';
+import AddItems from './Components/addItem';
 
 const styles = {
-  fontFamily: "sans-serif",
-  textAlign: "center"
+  fontFamily: 'sans-serif',
+  textAlign: 'center',
 };
 
 export default class App extends Component {
   constructor(props) {
-    super(props);;
+    super(props);
     this.state = {
-      allItems: ["nachos", "burritos", "hot dog"],
-      newItemName: ""
+      allItems: ['nachos', 'burritos', 'hot dog'],
+      newItemName: '',
     };
   }
 
   addItem = () => {
-    this.setState(state => ({
+    this.setState((state) => ({
       allItems: [...state.allItems, state.newItemName],
-      newItemName: ""
+      newItemName: '',
     }));
   };
 
-  setNewItemName = event => {
+  setNewItemName = (event) => {
     this.setState({ newItemName: event.target.value });
   };
 

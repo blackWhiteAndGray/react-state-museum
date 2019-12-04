@@ -1,0 +1,41 @@
+{
+  "extends": "../node_modules/eslint-config-airbnb/.eslintrc",
+  "parser": "babel-eslint",
+  "globals": {
+    "document": true,
+    "window": true
+  },
+  "rules": {
+    "react/prefer-es6-class": 0,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-pascal-case": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-closing-tag-location": 0,
+    "jsx-quotes": 0,
+    "no-multi-spaces": 0,
+    "react/jsx-tag-spacing": 0,
+    "react/jsx-curly-spacing": 0,
+    "react/jsx-boolean-value": 0,
+    "jsx-a11y/alt-text": 0,
+    "jsx-a11y/img-redundant-alt": 0,
+    "jsx-a11y/aria-role": 0,
+    "prop-types-exact": 0,
+    "react/no-string-refs": 0,
+    "react/jsx-wrap-multilines": 0,
+    "react/sort-comp": 0,
+    "react/destructuring-assignment": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/no-static-element-interactions": [
+      "error",
+      {
+        "handlers": ["onClick", "onMouseDown", "onMouseUp", "onKeyPress", "onKeyDown", "onKeyUp"]
+      }
+    ],
+    "jsx-a11y/interactive-supports-focus": [
+      "error",
+      {
+        "tabbable": ["button", "checkbox", "link", "searchbox", "spinbutton", "switch", "textbox"]
+      }
+    ]
+  }
+}

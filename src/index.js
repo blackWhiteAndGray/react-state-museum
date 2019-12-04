@@ -1,7 +1,7 @@
-import React from "react";
-import { render } from "react-dom";
-import Hello from "./Hello";
-import SetState from "./setState/index";
+import React from 'react';
+import { render } from 'react-dom';
+import Hello from './Hello';
+import SetState from './setState/index';
 // import ChatApp from "./c01/ChatApp";
 // import CommentBox from "./c02/CommentBox";
 // import { TabSelectorSample } from "./c02/TabSelector";
@@ -36,15 +36,15 @@ import SetState from "./setState/index";
 // import Suspense from "./c44/Suspense";
 // import "antd/dist/antd.css";
 
-import "./index.css";
+import './index.css';
 
 const styles = {
-  fontFamily: "sans-serif",
-  paddingLeft: "250px"
+  fontFamily: 'sans-serif',
+  paddingLeft: '250px',
 };
 
 const routeMap = {
-  "set-state": SetState
+  'set-state': SetState,
   //   chat: ChatApp,
   //   "comment-box": CommentBox,
   //   "tab-selector": TabSelectorSample,
@@ -80,15 +80,16 @@ const routeMap = {
 };
 
 class App extends React.PureComponent {
-  handleLinkClick = key => {
+  handleLinkClick = (key) => {
     // window.location.hash = `#${key}`;
-    window.history.pushState(null, "", `/#/${key}`);
+    window.history.pushState(null, '', `/#/${key}`);
     this.forceUpdate();
   };
-  render() {
-    const currentPage = document.location.hash.replace(/#\/?/, "");
 
-    let CurrentPage = routeMap[currentPage] || Hello;
+  render() {
+    const currentPage = document.location.hash.replace(/#\/?/, '');
+
+    const CurrentPage = routeMap[currentPage] || Hello;
     // if (currentPage.match(/\/user\/\w+|\/list-page/)) {
     //   CurrentPage = ListSample;
     // }
@@ -98,19 +99,25 @@ class App extends React.PureComponent {
     return (
       <div style={styles}>
         <ul className="menu-list">
-          {Object.keys(routeMap).map(key => (
+          {Object.keys(routeMap).map((key) => (
             <li
               key={key}
-              className={key === currentPage ? "is-active" : ""}
-              style={{ listStyle: "none" }}
+              className={key === currentPage ? 'is-active' : ''}
+              style={{ listStyle: 'none' }}
             >
-              <span className="link" onClick={() => this.handleLinkClick(key)}>
+              <span
+                className="link"
+                role="link"
+                tabIndex={0}
+                onClick={() => this.handleLinkClick(key)}
+                onKeyPress={() => this.handleLinkClick(key)}
+              >
                 {key}
               </span>
             </li>
           ))}
         </ul>
-        <div style={{ padding: "30px 0" }}>
+        <div style={{ padding: '30px 0' }}>
           <CurrentPage />
         </div>
       </div>
@@ -118,4 +125,4 @@ class App extends React.PureComponent {
   }
 }
 
-render(<App />, document.getElementById("root"));
+render(<App />, document.getElementById('root'));

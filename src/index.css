@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-input {
+/* input {
   padding: 7px;
   outline: none;
 }
@@ -38,7 +38,7 @@ button {
   border: none;
   cursor: pointer;
   outline: none;
-}
+} */
 
 .wizard-finish-step li {
   list-style: none;
